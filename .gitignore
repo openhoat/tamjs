@@ -1,8 +1,8 @@
-node_modules
-.idea
-app.js
-config.js
-manifest.yml
+/node_modules
+/.idea
+/app.js
+/config.js
+/manifest.yml
 
 /controllers/**
 /lesscss/**
