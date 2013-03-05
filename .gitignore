@@ -1,0 +1,17 @@
+node_modules
+.idea
+app.js
+config.js
+manifest.yml
+
+/controllers/**/*
+/lesscss/**/*
+/lib/**/*
+/locales/**/*
+/views/**/*
+
+!/controllers/**/*.encrypted
+!/lesscss/**/*.encrypted
+!/lib/**/*.encrypted
+!/locales/**/*.encrypted
+!/views/**/*.encrypted
