@@ -60,6 +60,14 @@ $(function () {
       truncateTweets();
       return false;
     });
+    $('#mapLink').click(function () {
+      var url = 'https://maps.google.com/maps';
+      url += '?q=loc:';
+      url += $('#latitude').text();
+      url += '+';
+      url += $('#longitude').text();
+      window.open(url, 'Google Map');
+    });
   }
 
   function initTracking() {
@@ -76,8 +84,8 @@ $(function () {
         fields.attr('disabled', 'disabled');
         watchId = navigator.geolocation.watchPosition(function (position) {
           socket.emit('location', {
-            longitude:position.coords.longitude,
-            latitude:position.coords.latitude
+            latitude:position.coords.latitude,
+            longitude:position.coords.longitude
           });
         }, function (error) {
           socket.emit('location');
@@ -92,8 +100,8 @@ $(function () {
     });
     navigator.geolocation.getCurrentPosition(function (position) {
       socket.emit('location', {
-        longitude:position.coords.longitude,
-        latitude:position.coords.latitude
+        latitude:position.coords.latitude,
+        longitude:position.coords.longitude
       });
     }, function (error) {
       socket.emit('location');
@@ -104,19 +112,19 @@ $(function () {
   function initSocket() {
     socket = io.connect(window.location.origin);
 
-    socket.on('transport', function(transport){
+    socket.on('transport', function (transport) {
       console.log('web sockets transport mode :', transport);
     });
 
     socket.on('client', function (client) {
-      $('#longitude').text(client.location.longitude || '');
       $('#latitude').text(client.location.latitude || '');
+      $('#longitude').text(client.location.longitude || '');
       $('#number').text(client.address.number || '');
       $('#street').text(client.address.street || '');
       $('#city').text(client.address.city || '');
       $('#region').text(client.address.region || '');
       $('#country').text(client.address.country || '');
-      $('#place').val((client.location.longitude + ',' + client.location.latitude) || '');
+      $('#place').val((client.location.latitude + ',' + client.location.longitude) || '');
     });
 
     socket.on('tweet', function (tweet) {

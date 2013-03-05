@@ -39,9 +39,6 @@ fieldset {
   padding-left: 20px;
   padding-right: 20px;
 }
-#trackingContainer {
-  float: right;
-}
 .clear {
   clear: both;
 }
@@ -104,4 +101,29 @@ fieldset {
   font-size: 0.9em;
   color: #aaaaaa;
   text-align: right;
+}
+#mapLink {
+  font-size: 0.6em;
+}
+#mapLink:before {
+  content: '(';
+}
+#mapLink:after {
+  content: ')';
+}
+@media (max-width: 979px) {
+  #page > section {
+    width: auto;
+  }
+  #currentPlaceContainer {
+    float: none;
+    clear: both;
+  }
+}
+@media (max-width: 767px) {
+  #page {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
