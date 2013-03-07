@@ -4,13 +4,14 @@
 /config.js
 /manifest.yml
 
-/controllers/**.js
+/controllers/**/*.js
 /lesscss/**.less
 /lib/**.js
 /locales/**.json
 /views/**.html
+/views/**/*.html
 
-!/controllers/**.encrypted
+!/controllers/**/*.encrypted
 !/lesscss/**.encrypted
 !/lib/**.encrypted
 !/locales/**.encrypted
