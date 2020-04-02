@@ -27,7 +27,7 @@
   "dependencies":{
     "wbpjs":"2.3.6",
     "step":"0.0.5",
-    "twit":"1.1.4",
+    "twit":"1.1.5",
     "googlemaps":"0.1.7"
   },
   "devDependencies":{
